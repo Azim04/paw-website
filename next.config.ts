@@ -15,8 +15,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  basePath: 'paw-website',
-  assetPrefix: 'paw-website',
+  basePath: '/paw-website',
+  assetPrefix: '/paw-website',
   trailingSlash: true,
 };
 
