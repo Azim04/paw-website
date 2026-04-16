@@ -824,9 +824,14 @@ export default function Home() {
 
       {/* FOOTER */}
 
-      <footer className="relative bg-[url('/images/footer.png')] bg-cover bg-center bg-no-repeat text-white py-16">
+      <footer
+        className="relative bg-cover bg-center bg-no-repeat text-white py-16"
+        style={{
+          backgroundImage: `url(${process.env.NODE_ENV === "production" ? "/paw-website" : ""}/images/footer.png)`,
+        }}
+      >
+        {" "}
         {/* Optional: Add an overlay if the image makes the white text hard to read */}
-
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between gap-12">
             {/* LEFT COLUMN: Logo & Info */}
