@@ -3,20 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: 'export',
   images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-      },
-      {
-        protocol: "https",
-        hostname: "*.picsum.photos",   
-      },
-    ],
+    unoptimized: true,        
   },
   basePath: '/paw-website',
-  assetPrefix: '/paw-website',
+  assetPrefix: '/paw-website/',
   trailingSlash: true,
 };
 
