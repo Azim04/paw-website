@@ -1,8 +1,3 @@
-// app/page.tsx
-// Replace the ENTIRE content of your app/page.tsx with this code.
-// This is a complete, production-ready landing page that matches the exact design in your screenshot.
-// Tailwind is already configured, so it will look almost identical right away.
-
 import Image from "next/image";
 
 const steps = [
@@ -32,7 +27,7 @@ export default function Home() {
         {/* Background Image - Full Screen */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero_banner_background.png"
+            src="./images/hero_banner_background.png"
             alt="Hero Background"
             fill
             className="object-cover"
@@ -49,7 +44,7 @@ export default function Home() {
                 {" "}
                 {/* ← Bigger container */}
                 <Image
-                  src="/images/plan_a_wedding_logo.svg"
+                  src="./images/plan_a_wedding_logo.svg"
                   alt="Plan A Wedding Logo"
                   fill
                   className="object-contain"
@@ -161,7 +156,7 @@ export default function Home() {
 
               <div className="relative mx-auto max-w-[590px]">
                 <Image
-                  src="/images/hero_phone.png"
+                  src="./images/hero_phone.png"
                   alt="Hero Phone"
                   width={590}
                   height={785}
@@ -198,7 +193,7 @@ export default function Home() {
             {/* Image Container - Fixed height/width for non-fill images */}
             <div className="relative w-full">
               <Image
-                src="/images/what_we_offer_phone.png"
+                src="./images/what_we_offer_phone.png"
                 alt="Features"
                 width={500}
                 height={600}
@@ -323,7 +318,7 @@ export default function Home() {
                     {" "}
                     {/* prevents the icon from squishing */}
                     <Image
-                      src="/images/100_percent_guarantee.svg"
+                      src="./images/100_percent_guarantee.svg"
                       alt="100% Guarantee"
                       width={48}
                       height={48}
@@ -343,7 +338,7 @@ export default function Home() {
                     {" "}
                     {/* prevents the icon from squishing */}
                     <Image
-                      src="/images/customer_support.svg"
+                      src="./images/customer_support.svg"
                       alt="100% Guarantee"
                       width={48}
                       height={48}
@@ -490,7 +485,7 @@ export default function Home() {
           <div className="md:col-span-6 flex justify-center">
             <div className="relative items-center">
               <Image
-                src="/images/4_steps.svg"
+                src="./images/4_steps.svg"
                 alt="Quick Steps"
                 width={428}
                 height={428}
@@ -571,7 +566,7 @@ export default function Home() {
             <div className="bg-white rounded-[35px] p-8 border-[#E1D7E9] ">
               <div className="relative">
                 <Image
-                  src="/images/five_stars.svg"
+                  src="./images/five_stars.svg"
                   alt="Five Stars"
                   width={116}
                   height={28}
@@ -582,7 +577,7 @@ export default function Home() {
                 <div className="flex items-center gap-4 mt-6">
                   <div className="w-12 h-12 bg-gray-300 rounded-[44px]">
                     <Image
-                      src="/images/maeve_ritter.svg"
+                      src="./images/maeve_ritter.svg"
                       alt="Maeve Ritter"
                       width={88}
                       height={88}
@@ -596,7 +591,7 @@ export default function Home() {
                 </div>
                 <div className="relative">
                   <Image
-                    src="/images/quote.svg"
+                    src="./images/quote.svg"
                     alt="Five Stars"
                     width={65}
                     height={65}
@@ -663,14 +658,14 @@ export default function Home() {
                 "The Impact Of Online Payments Will Make All Banks Use ATMs",
               subtitle:
                 "Lorem ipsum dolor sit amet conset atetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...",
-              imgId: "/images/bank_img.svg",
+              imgId: "./images/bank_img.svg",
             },
             {
               title:
                 "Is Now A Good Time To Worry More About Financial Inflation",
               subtitle:
                 "Lorem ipsum dolor sit amet conset atetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...",
-              imgId: "/images/inflation_img.svg",
+              imgId: "./images/inflation_img.svg",
             },
             {
               title:
@@ -678,7 +673,7 @@ export default function Home() {
               subtitle:
                 "Lorem ipsum dolor sit amet conset atetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...",
 
-              imgId: "/images/economy_img.svg",
+              imgId: "./images/economy_img.svg",
             },
           ].map((post) => (
             <div key={post.title} className="group">
@@ -713,7 +708,7 @@ export default function Home() {
             {/* Main Large Image */}
             <div className="relative z-10 overflow-hidden rounded-[47px]">
               <Image
-                src="/images/main_person.svg"
+                src="./images/main_person.svg"
                 alt="Main person"
                 width={565}
                 height={761}
@@ -724,7 +719,7 @@ export default function Home() {
             {/* Smaller Overlapping Image (Bottom Left) */}
             <div className="absolute bottom-8 -left-24 z-20 w-2/3 rounded-[47px] overflow-hidden  hidden md:block">
               <Image
-                src="/images/secondary_person.svg"
+                src="./images/secondary_person.svg"
                 alt="Secondary person"
                 width={348}
                 height={464}
@@ -767,15 +762,15 @@ export default function Home() {
               {[
                 {
                   title: "Trusted Partner",
-                  img: "/images/trusted_partner.svg",
+                  img: "./images/trusted_partner.svg",
                 },
                 {
                   title: "Fastpace Platform",
-                  img: "/images/fastpace_platform.svg",
+                  img: "./images/fastpace_platform.svg",
                 },
                 {
                   title: "Tested Reliability",
-                  img: "/images/trusted_reliability.svg",
+                  img: "./images/trusted_reliability.svg",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-6 items-start">
@@ -829,7 +824,7 @@ export default function Home() {
 
       {/* FOOTER */}
 
-      <footer className="relative bg-[url('/images/footer.png')] bg-cover bg-center bg-no-repeat text-white py-16">
+      <footer className="relative bg-[url('./images/footer.png')] bg-cover bg-center bg-no-repeat text-white py-16">
         {/* Optional: Add an overlay if the image makes the white text hard to read */}
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -838,7 +833,7 @@ export default function Home() {
             <div className="flex flex-col max-w-md">
               <div className="flex items-center text-white">
                 <Image
-                  src="/images/paw_logo_black.svg"
+                  src="./images/paw_logo_black.svg"
                   alt="Paw logo"
                   width={249}
                   height={75}
@@ -855,7 +850,7 @@ export default function Home() {
               <div className="mt-8 space-y-4">
                 <div className="flex items-center">
                   <Image
-                    src="/images/mail.svg"
+                    src="./images/mail.svg"
                     alt="Email"
                     height={16}
                     width={16}
@@ -870,7 +865,7 @@ export default function Home() {
                   {" "}
                   {/* Use items-start for long addresses */}
                   <Image
-                    src="/images/location.svg"
+                    src="./images/location.svg"
                     alt="Location"
                     height={16}
                     width={16}
@@ -947,7 +942,7 @@ export default function Home() {
           </div>
           <div className="mt-5 relative">
             <Image
-              src="/images/paw_logo_big.svg"
+              src="./images/paw_logo_big.svg"
               alt="Paw Logo"
               width={1280}
               height={388}
