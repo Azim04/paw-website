@@ -833,7 +833,7 @@ export default function Home() {
 
         {/* FOOTER */}
         <footer
-          className="relative bg-cover bg-center bg-no-repeat text-white py-16"
+          className="relative bg-cover bg-center bg-no-repeat text-white py-16 h-screen flex flex-col justify-center"
           style={{
             backgroundImage: `url(${process.env.NODE_ENV === "production" ? "/paw-website" : ""}/images/footer.png)`,
           }}
