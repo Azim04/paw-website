@@ -824,7 +824,7 @@ export default function Home() {
 
       {/* FOOTER */}
 
-      <footer className="relative bg-[url('./images/footer.png')] bg-cover bg-center bg-no-repeat text-white py-16">
+      <footer className="relative bg-[url('/images/footer.png')] bg-cover bg-center bg-no-repeat text-white py-16">
         {/* Optional: Add an overlay if the image makes the white text hard to read */}
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
