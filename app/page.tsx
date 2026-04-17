@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 const steps = [
@@ -20,11 +22,33 @@ const steps = [
 ];
 
 export default function Home() {
+  // === INCOMING ANIMATION LOGIC ===
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("!opacity-100", "!translate-y-0");
+          }
+        });
+      },
+      {
+        threshold: 0.2, // trigger when 20% of section is visible
+        rootMargin: "0px 0px -80px 0px",
+      },
+    );
+
+    const animatedSections = document.querySelectorAll(".animate-on-scroll");
+    animatedSections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <>
       <div className="bg-white min-h-screen">
         {/* HERO SECTION - Fixed Version */}
-        <header className="relative min-h-screen overflow-hidden">
+        <header className="relative min-h-screen overflow-hidden animate-on-scroll opacity-0 translate-y-12 transition-all duration-700 ease-out">
+          {" "}
           {/* Background Image - Full Screen */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -35,7 +59,6 @@ export default function Home() {
               priority
             />
           </div>
-
           {/* NAVBAR */}
           <nav className="relative z-50 w-full bg-transparent">
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -106,7 +129,6 @@ export default function Home() {
               </button>
             </div>
           </nav>
-
           {/* Main Content */}
           <div className="relative z-20 max-w-7xl mx-auto px-6 pt-20 pb-24 min-h-screen flex items-center">
             <div className="grid md:grid-cols-1 items-center w-full">
@@ -171,7 +193,8 @@ export default function Home() {
         </header>
 
         {/* WHAT WE OFFER / FEATURES */}
-        <section className="max-w-7xl bg-white mx-auto px-6 py-20">
+        <section className="max-w-7xl bg-white mx-auto px-6 py-20 animate-on-scroll opacity-0 translate-y-12 transition-all duration-700 ease-out">
+          {" "}
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             {/* Left Section - Spans roughly half width */}
             <div className="w-full md:w-[50%] mt-8">
@@ -294,7 +317,11 @@ export default function Home() {
         </section>
 
         {/* BUSINESS APP + PRICING */}
-        <section id="business-app" className="bg-gray-50 py-20">
+        <section
+          id="business-app"
+          className="bg-gray-50 py-20 animate-on-scroll opacity-0 translate-y-12 transition-all duration-700 ease-out"
+        >
+          {" "}
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-16">
               {/* Left Text */}
@@ -355,6 +382,22 @@ export default function Home() {
                   </div>
                 </div>
                 <button
+                  onClick={() => {
+                    const userAgent = navigator.userAgent.toLowerCase();
+                    const isApple = /iphone|ipad|macintosh/.test(userAgent);
+
+                    if (isApple) {
+                      window.open(
+                        "https://apps.apple.com/in/app/plan-a-wedding-business/id6476916891",
+                        "_blank",
+                      );
+                    } else {
+                      window.open(
+                        "https://play.google.com/store/apps/details?id=com.wedding.planner&pcampaignid=web_share",
+                        "_blank",
+                      );
+                    }
+                  }}
                   className="bg-linear-to-r from-[#863AC1] to-[#BA8EFA]
                       hover:from-[#7A2EB8] hover:to-[#B07EF0]
                       text-white
@@ -482,7 +525,7 @@ export default function Home() {
         {/* COUPLE APP + 4 STEPS */}
         <section
           id="couple-app"
-          className="max-w-7xl bg-white px-6 py-20 items-center mx-auto"
+          className="max-w-7xl bg-white px-6 py-20 items-center mx-auto animate-on-scroll opacity-0 translate-y-12 transition-all duration-700 ease-out"
         >
           <div className="grid md:grid-cols-12 gap-16 items-center">
             {/* Phone */}
@@ -545,6 +588,22 @@ export default function Home() {
               </div>
 
               <button
+                onClick={() => {
+                  const userAgent = navigator.userAgent.toLowerCase();
+                  const isApple = /iphone|ipad|macintosh/.test(userAgent);
+
+                  if (isApple) {
+                    window.open(
+                      "https://apps.apple.com/in/app/plan-a-wedding/id6698875431",
+                      "_blank",
+                    );
+                  } else {
+                    window.open(
+                      "https://play.google.com/store/apps/details?id=com.planawedding.customer&pcampaignid=web_share",
+                      "_blank",
+                    );
+                  }
+                }}
                 className="bg-linear-to-r from-[#863AC1] to-[#BA8EFA]
                       hover:from-[#7A2EB8] hover:to-[#B07EF0]
                       text-white
@@ -564,7 +623,11 @@ export default function Home() {
         </section>
 
         {/* TESTIMONIAL */}
-        <section id="testimonials" className="bg-white py-16">
+        <section
+          id="testimonials"
+          className="bg-white py-16 animate-on-scroll opacity-0 translate-y-12 transition-all duration-700 ease-out"
+        >
+          {" "}
           <div className="max-w-7xl mx-auto px-6">
             <div className="bg-[#F6F5F9] grid md:grid-cols-2 gap-12 items-start p-12 rounded-[47]">
               <div className="bg-white rounded-[35px] p-8 border-[#E1D7E9] ">
@@ -640,7 +703,7 @@ export default function Home() {
         {/* BLOG */}
         <section
           id="blog"
-          className="max-w-7xl mx-auto px-6 py-20 items-center bg-white"
+          className="max-w-7xl mx-auto px-6 py-20 items-center bg-white animate-on-scroll opacity-0 translate-y-12 transition-all duration-700 ease-out"
         >
           <div className="flex items-center flex-col mb-10">
             <div className="flex items-center gap-[10px] mb-4">
@@ -708,7 +771,11 @@ export default function Home() {
         </section>
 
         {/* STATS + ABOUT */}
-        <section id="about" className="max-w-7xl mx-auto px-6 py-20 bg-white">
+        <section
+          id="about"
+          className="max-w-7xl mx-auto px-6 py-20 bg-white animate-on-scroll opacity-0 translate-y-12 transition-all duration-700 ease-out"
+        >
+          {" "}
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* LEFT: Overlapping Images */}
             <div className="relative items-center">
@@ -810,7 +877,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
           {/* 2. STATS BAR (Bottom) */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 text-center">
             {[
@@ -832,8 +898,9 @@ export default function Home() {
         </section>
 
         {/* FOOTER */}
+
         <footer
-          className="relative bg-cover bg-center bg-no-repeat text-white py-16 h-screen flex flex-col justify-center"
+          className="relative bg-cover bg-center bg-no-repeat text-white py-16 h-screen flex flex-col justify-center animate-on-scroll opacity-0 translate-y-12 transition-all duration-700 ease-out"
           style={{
             backgroundImage: `url(${process.env.NODE_ENV === "production" ? "/paw-website" : ""}/images/footer.png)`,
           }}
@@ -940,13 +1007,34 @@ export default function Home() {
                     Social Connect
                   </div>
                   <div className="space-y-3 font-inter text-black text-[16px]">
-                    <div className="hover:text-purple-600 cursor-pointer transition">
+                    <div
+                      onClick={() => {
+                        window.open(
+                          "https://www.facebook.com/planaweddingplatform",
+                          "_blank",
+                        );
+                      }}
+                      className="hover:text-purple-600 cursor-pointer transition"
+                    >
                       Facebook
                     </div>
-                    <div className="hover:text-purple-600 cursor-pointer transition">
+                    <div
+                      onClick={() => {
+                        window.open(
+                          "https://www.instagram.com/planawedding.in/?igsh=MWVqMXQ2aTd0emRndw%3D%3D&utm_source=qr#",
+                          "_blank",
+                        );
+                      }}
+                      className="hover:text-purple-600 cursor-pointer transition"
+                    >
                       Instagram
                     </div>
-                    <div className="hover:text-purple-600 cursor-pointer transition">
+                    <div
+                      onClick={() => {
+                        window.open("https://x.com/planawedding_in", "_blank");
+                      }}
+                      className="hover:text-purple-600 cursor-pointer transition"
+                    >
                       X
                     </div>
                   </div>
@@ -967,13 +1055,29 @@ export default function Home() {
                 © 2026 planawedding. All Rights Reserved.
               </div>
               <div className=" flex flex-row justify-end">
-                <div className="font-inter text-[16px] font-regular text-black">
+                <div
+                  onClick={() => {
+                    window.open(
+                      "https://planawedding.in/termsandconditions",
+                      "_blank",
+                    );
+                  }}
+                  className="font-inter text-[16px] font-regular text-black hover:text-purple-600 transition-colors cursor-pointer"
+                >
                   Terms of Services
                 </div>
                 <div className="mx-5 font-inter text-[16px] font-regular text-black">
                   |
                 </div>
-                <div className="font-inter text-[16px] font-regular text-black">
+                <div
+                  onClick={() => {
+                    window.open(
+                      "https://planawedding.in/privacypolicy",
+                      "_blank",
+                    );
+                  }}
+                  className="font-inter text-[16px] font-regular text-black hover:text-purple-600 transition-colors cursor-pointer"
+                >
                   Privacy Policy
                 </div>
               </div>
