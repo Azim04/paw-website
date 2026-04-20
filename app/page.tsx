@@ -656,7 +656,9 @@ export default function Home() {
                       />
                     </div>
                     <div>
-                      <div className="font-semibold">Maeve Ritter</div>
+                      <div className="font-semibold text-black">
+                        Maeve Ritter
+                      </div>
                       <div className="text-xs text-gray-400">Happy Couple</div>
                     </div>
                   </div>
@@ -893,7 +895,7 @@ export default function Home() {
                 <div className="font-inter font-bold text-black text-4xl  mb-2">
                   {stat.value}
                 </div>
-                <div className="font-inter text-[19px] font-regular text-[787778] font-medium">
+                <div className="font-inter text-[19px] font-regular text-[#787778] font-medium">
                   {stat.label}
                 </div>
               </div>
