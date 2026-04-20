@@ -354,7 +354,9 @@ export default function Home() {
                       />
                     </div>
                     <div>
-                      <div className="font-semibold">100% Guarantee</div>
+                      <div className="font-semibold text-black">
+                        100% Guarantee
+                      </div>
                       <div className="text-sm text-gray-500">
                         Best quality leads
                       </div>
@@ -374,7 +376,9 @@ export default function Home() {
                       />
                     </div>
                     <div>
-                      <div className="font-semibold">24/7 Support</div>
+                      <div className="font-semibold text-black">
+                        24/7 Support
+                      </div>
                       <div className="text-sm text-gray-500">
                         Connect with us easily
                       </div>
